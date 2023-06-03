@@ -21,26 +21,5 @@ namespace EF7CodeFirst.Data
         public DbSet<WeatherForecast> Forecasts { get; set; }
     }
 
-    public class MyDbContextFactory : IDesignTimeDbContextFactory<DataContext>
-    {
-        public DataContext CreateDbContext(string[] args)
-        {
-            throw new NotImplementedException();
-        }
-
-        DataContext IDesignTimeDbContextFactory<DataContext>.CreateDbContext(string[] args)
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-                .Build();
-
-            var builder = new DbContextOptionsBuilder<DataContext>();
-            var connectionString = "Server:localhost ;User Id: softsamed; Password: 123AsD987;Database: postgres; Port:5432; Integrated Security = true";
-
-            builder.UseNpgsql(connectionString);
-
-            return new DataContext(builder.Options);
-        }
-    }
+    
 }
