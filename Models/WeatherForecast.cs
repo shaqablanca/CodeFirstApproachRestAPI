@@ -1,8 +1,11 @@
-﻿namespace EF7CodeFirst;
+﻿using System;
+
+namespace EF7CodeFirst.Models;
 
 public class WeatherForecast
 {
     public int Id { get; set; }
+
     public DateOnly Date { get; set; }
 
     public int TemperatureC { get; set; }
@@ -11,4 +14,3 @@ public class WeatherForecast
 
     public string? Summary { get; set; }
 }
-

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using EF7CodeFirst.Models;
 namespace EF7CodeFirst.Controllers;
 
 [ApiController]
@@ -29,5 +29,6 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
-}
 
+   
+}

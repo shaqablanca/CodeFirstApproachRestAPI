@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using EF7CodeFirst.Models;
+
 
 namespace EF7CodeFirst.Data
 {
@@ -14,12 +16,13 @@ namespace EF7CodeFirst.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseNpgsql("Host=localhost ; Port=5432; Database= postgres; Username= softsamed; Password= 123AsD987; Integrated Security = true");
-            //optionsBuilder.UseNpgsql("Server:localhost ;User Id: softsamed; Password: 123AsD987;Database: postgres; Port:5432; Integrated Security = true");
+            //optionsBuilder.UseNpgsql("Host=localhost ; Port=5432; Database= postgres; Username= softsamed; Password= 123AsD987; Integrated Security = true");
         }
 
         public DbSet<WeatherForecast> Forecasts { get; set; }
+
+        public DbSet<News> NewsChannels { get; set; }
     }
 
-    
+ 
 }

@@ -3,6 +3,7 @@ using System;
 using EF7CodeFirst.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EF7CodeFirst.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230606124651_InitialSecond")]
+    partial class InitialSecond
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +50,7 @@ namespace EF7CodeFirst.Migrations
                     b.ToTable("NewsChannels");
                 });
 
-            modelBuilder.Entity("EF7CodeFirst.Models.WeatherForecast", b =>
+            modelBuilder.Entity("EF7CodeFirst.WeatherForecast", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,6 +60,9 @@ namespace EF7CodeFirst.Migrations
 
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
+
+                    b.Property<int>("Deneme")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Summary")
                         .HasColumnType("text");
