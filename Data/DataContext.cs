@@ -16,12 +16,10 @@ namespace EF7CodeFirst.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseNpgsql();
             //optionsBuilder.UseNpgsql("Host=localhost ; Port=5432; Database= postgres; Username= softsamed; Password= 123AsD987; Integrated Security = true");
         }
-
-        public DbSet<WeatherForecast> Forecasts { get; set; }
-
-        public DbSet<News> NewsChannels { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
     }
 
  

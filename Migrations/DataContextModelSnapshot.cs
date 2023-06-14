@@ -44,10 +44,10 @@ namespace EF7CodeFirst.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NewsChannels");
+                    b.ToTable("NewsChannels", (string)null);
                 });
 
-            modelBuilder.Entity("EF7CodeFirst.Models.WeatherForecast", b =>
+            modelBuilder.Entity("EF7CodeFirst.WeatherForecast", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,6 +58,9 @@ namespace EF7CodeFirst.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
+                    b.Property<int>("Deneme")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Summary")
                         .HasColumnType("text");
 
@@ -66,7 +69,7 @@ namespace EF7CodeFirst.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Forecasts");
+                    b.ToTable("Forecasts", (string)null);
                 });
 #pragma warning restore 612, 618
         }
