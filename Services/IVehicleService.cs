@@ -5,7 +5,7 @@ namespace EF7CodeFirst.Services
 {
 	public interface IVehicleService
 	{
-        List<Vehicle> GetAllVehicles();
+        Task<List<Vehicle>> GetAllVehicles();
 
         Vehicle? GetVehicleById(int id);
 

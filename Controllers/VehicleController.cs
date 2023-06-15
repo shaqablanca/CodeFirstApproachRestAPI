@@ -22,7 +22,7 @@ namespace EF7CodeFirst.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Vehicle>>> GetAllVehicles()
         {
-            return  _vehicleService.GetAllVehicles();
+            return await _vehicleService.GetAllVehicles();
         }
         [HttpGet("{id}")] 
 	    public async Task<ActionResult<Vehicle>> GetVehicleById(int id)

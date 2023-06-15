@@ -1,6 +1,8 @@
 ﻿using System;
+using EF7CodeFirst.Data;
 using EF7CodeFirst.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EF7CodeFirst.Services
 {
@@ -33,7 +35,12 @@ namespace EF7CodeFirst.Services
 
             };
 
+        private readonly DataContext _context;
 
+        public VehicleService(DataContext context)
+        {
+            _context = context;
+        }
 
         public List<Vehicle> AddVehicle(Vehicle vehicle)
         {
@@ -41,9 +48,9 @@ namespace EF7CodeFirst.Services
             return vehicles;
         }
 
-        public List<Vehicle> GetAllVehicles()
+        public async Task<List<Vehicle>> GetAllVehicles()
         {
-            
+            var vehicles = await _context.Vehicles.ToListAsync();
             return vehicles;
         }
 
