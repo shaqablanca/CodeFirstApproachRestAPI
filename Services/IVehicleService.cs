@@ -7,13 +7,13 @@ namespace EF7CodeFirst.Services
     {
         Task<List<Vehicle>> GetAllVehicles();
 
-        Vehicle? GetVehicleById(int id);
+        Task<Vehicle?> GetVehicleById(int id);
 
-        List<Vehicle> AddVehicle(Vehicle vehicle);
+        Task<List<Vehicle>> AddVehicle(Vehicle vehicle);
 
-        List<Vehicle>? UpdateVehicle(int id, Vehicle modify);
+        Task<List<Vehicle>?> UpdateVehicle(int id, Vehicle modify);
 
-        List<Vehicle>? RemoveVehicle(int id);
+        Task<List<Vehicle>?> RemoveVehicle(int id);
 
 
     }

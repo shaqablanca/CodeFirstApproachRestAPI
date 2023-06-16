@@ -27,7 +27,7 @@ namespace EF7CodeFirst.Controllers
         [HttpGet("{id}")] 
 	    public async Task<ActionResult<Vehicle>> GetVehicleById(int id)
         {
-            var result = _vehicleService.GetVehicleById(id);
+            var result = await _vehicleService.GetVehicleById(id);
             if (result == null)
                 return NotFound("Ooppss!! Vehicle not found!!");
             return Ok(result);
@@ -36,14 +36,14 @@ namespace EF7CodeFirst.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Vehicle>>> AddVehicle(Vehicle vehicle)
         {
-            var result = _vehicleService.AddVehicle(vehicle);
+            var result = await _vehicleService.AddVehicle(vehicle);
             return Ok(result);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<List<Vehicle>>> UpdateVehicle(int id,Vehicle modify)
         {
-            var result = _vehicleService.UpdateVehicle(id, modify);
+            var result = await _vehicleService.UpdateVehicle(id, modify);
             if (result == null)
                 return NotFound("Ooppss!! Vehicle not found!!");
             return Ok(result);
@@ -52,7 +52,7 @@ namespace EF7CodeFirst.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<List<Vehicle>>> RemoveVehicle(int id)
         {
-            var result = _vehicleService.RemoveVehicle(id);
+            var result = await _vehicleService.RemoveVehicle(id);
             if (result == null)
                 return NotFound("Ooppss!! Vehicle not found!!");
             return Ok(result);
