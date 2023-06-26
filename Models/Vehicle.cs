@@ -5,7 +5,7 @@ namespace EF7CodeFirst.Models
 	{
 		public int Id { get; set; }
 
-		public string VehicleType { get; set; } = string.Empty;
+		public List<string>? VehicleType { get; set; } 
 
 		public string Model { get; set; } = string.Empty;
 
@@ -20,4 +20,3 @@ namespace EF7CodeFirst.Models
 		public string Country { get; set; } = string.Empty;
     }
 }
-

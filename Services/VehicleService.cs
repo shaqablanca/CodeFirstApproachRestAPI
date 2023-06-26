@@ -23,7 +23,7 @@ namespace EF7CodeFirst.Services
             return await _context.Vehicles.ToListAsync();
         }
 
-        public async Task<List<Vehicle>> GetAllVehicles()
+        public async Task<List<Vehicle>> GetAllVehicles() 
         {
             var vehicles = await _context.Vehicles.ToListAsync();
             return vehicles;
